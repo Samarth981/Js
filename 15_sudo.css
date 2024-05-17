@@ -1,0 +1,32 @@
+body{
+    text-align: center;
+}
+.btn{
+    width: 200px;
+    height: 200px;
+    border-radius: 20%;
+    border: 10px solid black;
+    margin: 2.5rem;
+}
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+.red{
+    background-color: rgb(242, 137, 137);
+}
+.green{
+    background-color: rgb(140, 219, 140);
+}
+.purple{
+    background-color: rgb(209, 115, 209);
+}
+.yellow{
+    background-color: rgb(209, 209, 116);
+}
+.flesh{
+    background-color: whitesmoke;
+}
+.userFlesh{
+    background-color: green;
+}

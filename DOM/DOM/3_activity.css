@@ -1,0 +1,19 @@
+*{
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
+body{
+    text-align: center;
+}
+div{
+    height: 100px;
+    width: 500px;
+    border: 1px solid wheat;
+    color: rgb(255, 255, 255);
+    background-color: rgb(230, 136, 136);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
