@@ -18,3 +18,7 @@ h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
 }
+button{
+    background-color: rgb(232, 0, 0);
+    border-radius: 50px;
+}
