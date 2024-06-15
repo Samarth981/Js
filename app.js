@@ -124,7 +124,7 @@ let Age =prompt("age");
 alert(`${Name} is ${Age} year old.` );
 
 let strings = "Aamaerh";
-if( (strings.length > 5)  && (strings[0]=='A' ||  strings[0]=='A' ) ){
+if( (strings.length > 5)  && strings[0]=='A'){
     console.log("golden string")
 } else {
     console.log("not golden string");
