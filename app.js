@@ -1,4 +1,4 @@
-// // alert part
+// alert part
 // alert("This is a testing peg");
 // console.log("this is a testing");
 // console.error("This is a give red error");
