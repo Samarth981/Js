@@ -95,6 +95,7 @@ if(str.length == 0){
 }
 
 let st = str// user give input
+console.log(st);
 let cher_idx = 3;
 if(st[cher_idx] == st[cher_idx].toUpperCase()){
     console.log("Upper string");
