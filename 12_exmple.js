@@ -57,9 +57,9 @@ function callBack(){
 const obj = {
     l : 5,
     method(callBack){
-        callBack();
+        return this;
     },
 };
-obj.method(callBack);
+console.log(obj.method(callBack));
 
 
