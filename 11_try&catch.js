@@ -49,10 +49,11 @@ console.log(ans);
 //use for set a time for exicution
 
 console.log("Hii! are you there");
-setTimeout(()=>{
+let id = setTimeout(()=>{
     console.log("my website");
-},2000);
-console.log("welcome to");
+},4000);
+console.log("welcome to the program");
+console.log(id);
 
 
 //setInterval
@@ -84,7 +85,7 @@ console.log(id2) // print id2
 let id3 = setTimeout( ()=>{
     clearInterval(id1);
     clearInterval(id2);
-}, 10000);
+}, 10000);  
 
 
 //this with arrrow function
@@ -105,6 +106,13 @@ const student = {
         return this.marks;
     },
 }
+console.log(student);
+console.log(student.prop);
+console.log(student.getName());
+console.log(student.getmarks()); //undefin because return to marks thay che pan this window object 
+// che and them marks nathi
+
+
 
 // prectice quetion 
 

@@ -84,8 +84,10 @@ const detail = {
     average(){
         let avg = (this.eng + this.math + this.phy)/3;
         console.log(avg);
+        console.log(this); //detail obeject
     }
 }
+console.log(detail.average());
 
 // this is help to print widow object (higher lavel objects file)
 console.log(this); //print window object 

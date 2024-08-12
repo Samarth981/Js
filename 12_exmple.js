@@ -39,11 +39,13 @@ console.log(Event(n));
 //quetion-3 dibuging
 const object = {
     message : 'samarth',
-    logName() { 
-            console.log(this.message);
-        }
-};
-setTimeout(object.logName,1000);
+    logName() {
+            return this.message
+        },
+    }
+let x = (object.logName());
+let y = (object.logName);
+console.log(x,y);
 //print undefind because acess a only function, and this function not a message fun.
 
 //quetion-4
