@@ -33,9 +33,8 @@ function outerFonc(){
     ineerFunc2();
 }
 
-
-//EXP-2
 outerFonc();
+//EXP-2
 function outerfonc(){
     let a =9;
     let b=10;
