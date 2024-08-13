@@ -15,3 +15,16 @@ console.log(add);
 let array2 = ["samarth", "soham", "aman", "raj"];
 console.log(array2.map((string)=> string.toUpperCase()));
 
+//Q4
+//print arr and double of args
+const doubleAndReturnArgs = ((arr , ...args) => [
+    ...arr,
+    ...args.map((value) => value*2),
+]);
+
+doubleAndReturnArgs([1,2,3],4,4);
+
+//Q5
+const mergeObjects = ((obj1 , obj2) => ({...obj1 , ...obj2}));
+console.log(mergeObjects({a:1,b:2},{c:3,d:4}));
+

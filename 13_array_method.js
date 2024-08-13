@@ -61,7 +61,7 @@ console.log(gpa);
 
 //filter 
 //filter use to filler array and creat a new array
-let pass = arrays.filter((value)=> value.marks>=20);
+let pass = arrays.filter((value)=> value.marks>=20);  //fail then not stor
 console.log(pass);
 
 //Evry
@@ -120,7 +120,7 @@ let ans = multi.every((el) => el%10==0);
 console.log(ans);
 //if quetion is multiply 10 in all array value then use mep method 
 
-//min number in arrau find and creat a function for use all array.
+//min number in array find and creat a function for use all array.
 
 function getmin(array){
     let min = array.reduce((min,a)=> {
@@ -198,13 +198,14 @@ const objec = {
 console.log(objec);
 
 
-//rest is a rever for spread
+//rest is a revers for spread
 //multipale value store in one array
 function fu(...args){
     for(let i=0;i<args.length;i++){
         console.log("argument is :" + args[i]);
     }
 }
+fu(56,2,3,8);
 
 //destuctuing
 //this is help to store array part in variables
@@ -219,8 +220,8 @@ const obje = {
     username : "samarth133",
     password : "khfffgog",
 };
-let {username, password, ...others_value} = obje; //...others_value =>rest consepts(combine)
-console.log(username, password, others_value);
+let {username, password,city = "surat", ...others_value} = obje; //...others_value =>rest consepts(combine)
+console.log(username, password, city, others_value);
 
 
 
