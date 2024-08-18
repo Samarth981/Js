@@ -45,12 +45,14 @@ console.dir(document.querySelector(".box ul li a")); //give first li a
 console.dir(document.querySelectorAll(".box ul li a")) //all li a //give ans nodelist because tree stucture in js
 
 
-//Manupulating attribute
+//attribute Manupulating (class, id, styling,src,so more)
+
 //gerAttribute(attr)
 document.getElementById("mainImg").src = "./spiderman_img.png"; //access mainimg id and change src
 let image = document.querySelector('img');
-image.getAttribute('id'); // access id
-image.setAttribute('id','spidermenimg'); //access id and change id 
+image.getAttribute('id'); // access id //mainImg
+image.setAttribute('id','spidermenimg'); //access id and change id   
+
 
 //style manupulation
 //obj.style
@@ -82,7 +84,7 @@ box.classList.add("bg");
 console.log(box.classList);
 box.classList.remove("bg") //bg class remove
 console.log(box.classList);
-box.classList.contains("bg"); //if not exist then falses
+console.log(box.classList.contains("bg"));//if not exist then falses
 box.classList.toggle('bg');
 console.log(box.classList);
 
