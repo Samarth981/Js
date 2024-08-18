@@ -1,47 +1,16 @@
-// // 1. a <p> with red text says "Hey I am red"
-// let p = document.createElement('p'); //creat pera
-// p.innerText = "Hyy I am a red"; //add text
-// let body = document.querySelector('body') //access body
-// body.append(p) //append in body
-// p.classList.add('pera'); //ad colore
-
-// // 2. same add <h3> text->"I am blue h3"
-// let h3 = document.createElement('h3'); //creat pera
-// h3.innerText = "Hyy I am a red"; //add text
-// // let body = document.querySelector('body') //access body
-// body.append(h3) //append in body
-// h3.classList.add('blue'); //ad colore
-
-// // 3. a <div> with a black border and pink bg colore with the add <h1> and <p>
-// let div = document.createElement('div');
-// let h1 = document.createElement('h1');
-// let p2 = document.createElement('p');
-// h1.innerText = "Hyy samarth";
-// p2.innerText = "you are good?";
-// div.classList.add('box'); 
-// div.append(h1);
-// div.append(p2);
-// body.append(div);
-
-
-
-//uper part use append show show a after script teg in html
-
-//but use prepend then appnd div in start body
-//and all cord set revere last is first
 // 1. a <p> with red text says "Hey I am red"
 let p = document.createElement('p'); //creat pera
 p.innerText = "Hyy I am a red"; //add text
 let body = document.querySelector('body') //access body
-body.prepend(p) //prepend in body
-p.classList.add('pera'); //ad colore
+body.append(p) //append in body
+p.classList.add('red'); ////give a class for this eliment 
 
 // 2. same add <h3> text->"I am blue h3"
 let h3 = document.createElement('h3'); //creat pera
 h3.innerText = "Hyy I am a red"; //add text
 // let body = document.querySelector('body') //access body
-body.prepend(h3) //prepend in body
-h3.classList.add('blue'); //ad colore
+body.append(h3) //append in body
+h3.classList.add('blue'); //give a class for this eliment 
 
 // 3. a <div> with a black border and pink bg colore with the add <h1> and <p>
 let div = document.createElement('div');
@@ -50,10 +19,9 @@ let p2 = document.createElement('p');
 h1.innerText = "Hyy samarth";
 p2.innerText = "you are good?";
 div.classList.add('box'); 
-div.prepend(h1);
-div.prepend(p2);
-body.prepend(div);
-
+div.append(h1);
+div.append(p2);
+body.append(div);
 
 //assingnment
 
