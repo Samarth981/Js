@@ -4,13 +4,13 @@ form.addEventListener("submit" , function(event){
     event.preventDefault();
     let user = document.querySelector("#user");
     let pass = document.querySelector("#pass");
+    console.dir(user);
     console.log(user.value);
     console.log(pass.value);    
     alert(`hyy ${user.value} your password is saved`);
 });
 
-//internal eliment track to using  form object
-//not use query selector for form because internal all form save some area
+// using  form object internal eliment find
 form.addEventListener("submit" , function(event){
     // event.preventDefault();
     let user = form.elements[0];
@@ -20,11 +20,12 @@ form.addEventListener("submit" , function(event){
     console.log(pass.value);    
     alert(`hyy ${user.value} your password is saved`);
 });
+
 //chnge event
 let input = document.querySelector("#user"); 
 input.addEventListener("change",function(){
     console.log("final value =", this.value);
-})
+});
 
 //input event
 let pass = document.querySelector("#pass"); 

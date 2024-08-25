@@ -10,7 +10,7 @@ for(exicute of btn) {
     }
 }       
 function print() {
-    alert("thanks for ans");
+    alert(`thanks for clicking button`);
 }
 
 //addEventListener
@@ -49,9 +49,7 @@ function changeColor(){
     }
 }
 console.dir(btns);
-btns.forEach(function(btn) { //use function for all eliment asscess because creat a nod list
-    btn.addEventListener('click', changeColor);
-});
+btns.forEach((btn) => btn.addEventListener('click', changeColor));  //use function for all eliment asscess because creat a nod list
 
 
 //ex-2

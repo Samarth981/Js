@@ -12,10 +12,12 @@ btn.addEventListener('dblclick',function(event){
 //keybord event
 
 //keydown
+let count = 0;
 let input = document.querySelector('input');
 input.addEventListener('keydown' , (event) => {
     console.log(event);
     console.log("key = "+event.key);
+    count++;
     console.log("code = "+event.code); //Arrowleft, Arrowright, Arrowup, Arrowdown
     if(event.code== "ArrowUp"){
         console.log("game care move in forward");
@@ -33,23 +35,30 @@ input.addEventListener('keyup' , (event) => {
     console.log("code = "+event.code);
     
 });
-
+let c = document.getElementById('count');
+c.addEventListener('click' , ()=>{
+    console.log(count);
+})
+let r = document.getElementById('restart');
+r.addEventListener('click' , ()=>{
+    count = 0;
+})
 
 //form Event
 
 //use normal submit event,
-let form = document.querySelector('form');
-form.addEventListener('submit', alerts);
-function alerts(event) { 
-    let confirmation = confirm("Do you want to submit the form?");
-    alert("form is submit");
-}
+// let form = document.querySelector('form');
+// form.addEventListener('submit', alerts);
+// function alerts(event) { 
+//     let confirmation = confirm(" you wDoant to submit the form?");
+//     alert("form is submit");
+// }
 
-//use preventDefault()
+// use preventDefault()
 //help to defalu peramiter is remove. like emple -> action after submite button
-let form2 = document.querySelector('#registrationForm');
+let form2 = document.getElementById('registrationForm');
 form2.addEventListener("submit", alerts);
 function alerts(event) {
-    event.preventDefault(); 
-    alerts("form is submit");
+    event.preventDefault();
+    alert("form is submit"); 
 }
