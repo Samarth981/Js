@@ -29,7 +29,7 @@ btn.addEventListener("click", function(){
 //     });
 
 //use Event Delegration concept
-// if same time eliment addEventListener is exist then new same type eliment create then not work
+// if same tiye eliment addEventListener is exist then new same type eliment create then not work
 //like exmple btn object addEventListener is alredy creat (line 5) after then append new btn in li and li append in ul so not add direct btn (because addEventListener alredy exist)
 //so, use for parent object  and call target eliment(btn) and remove li(this li is parent for btn)
 uls.addEventListener("click", function(event) {

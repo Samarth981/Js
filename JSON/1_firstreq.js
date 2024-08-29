@@ -5,22 +5,22 @@
 // fetch(url) //fetch return a promices
  
 let url = "https://catfact.ninja/fact";
-// fetch(url)
-//     .then((respons) => { 
-//         console.log(respons); //come in body redablestrem not access all data 
-//         return respons.json() // access using this function use -> come to redable formet 
-//         //this was retuen promise // and in the promise response give data
-//     })
-//     .then((data) => {
-//         console.log(data); //respons --> object -> response -> data
-//         return data.fact
-//     })
-//     .then((fact) => {
-//         console.log(fact);
-//     })
-//     .catch((err) => {   
-//         console.log("Error :", err );
-//     });
+fetch(url)
+    .then((respons) => { 
+        console.log(respons); //come in body redablestrem not access all data 
+        return respons.json() // access using this function use -> come to redable formet 
+        //this was retuen promise // and in the promise response give data
+    })
+    .then((data) => {
+        console.log(data); //respons --> object -> response -> data
+        return data.fact
+    })
+    .then((fact) => {
+        console.log(fact);
+    })
+    .catch((err) => {   
+        console.log("Error :", err );
+    });
 
 
 // secound exmple, one url two diffrent response

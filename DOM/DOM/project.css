@@ -1,0 +1,50 @@
+body{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.btn{
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    border: 10px solid white;
+    margin: 2rem;
+    color: black;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.title{
+    color: rgb(209, 149, 44);
+    font-style: oblique;
+}
+.btn_con{
+    display: flex;
+    justify-content: center;
+}
+.red{
+    background-color: red;
+}
+.purple{
+    background-color: purple;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+.flash{
+    background-color: rgb(255, 255, 255);
+}
+.flash2{
+    background-color: rgb(18, 219, 219);
+}
+.bold{
+    color: blueviolet;
+}
+.orange{
+    color: orange;
+}

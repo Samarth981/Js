@@ -13,6 +13,7 @@
 //     }
 // }
 
+//call hill
 // saveToDB(
 //     "apna collage", 
 //     ()=>{
@@ -25,14 +26,25 @@
 //                 "hello word you can success for 3", 
 //                 () => {
 //                     console.log("success3 : your data was saved");
+//                     saveToDB(
+//                         "hello word you can success for 4", 
+//                         () => {
+//                             console.log("success4 : your data was saved");
+//                         },
+//                         () => {
+//                             console.log("failure4 : data was failure to store");
+//                         }
+//                     );
 //                 },
 //                 () => {
 //                     console.log("failure3 : data was failure to store");
-//                 });
+//                 }
+//             );
 //         },
 //         () => {
 //             console.log("failure2 : data was failure to store");
-//         });
+//         }
+//     );
 //     },
 //     ()=> {
 //         console.log("failure : data was failure to store");
@@ -91,7 +103,7 @@ function saveToDB(data){
 //             .then(() => {
 //                 console.log("data3 saved : promissing was resoved");
 //             })
-//         });
+//         })
 //     })
 //     .catch(() => {
 //         console.log("promising is rejected");
@@ -117,4 +129,4 @@ saveToDB("apna collage")
     .catch((error) => { //comen for all
         console.log("promising is rejected");
         console.log("error : ", error); // error --> reject
-    });
+    }); 
