@@ -10,3 +10,4 @@ let JsonRes =
 let valiedRes = JSON.parse(JsonRes);
 console.log(valiedRes);
 console.log(valiedRes.fact); //object so give ouput
+

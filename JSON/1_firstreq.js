@@ -5,50 +5,58 @@
 // fetch(url) //fetch return a promices
  
 let url = "https://catfact.ninja/fact";
-fetch(url)
-    .then((respons) => { 
-        console.log(respons); //come in body redablestrem not access all data 
-        return respons.json() // access using this function use -> come to redable formet 
-        //this was retuen promise // and in the promise response give data
-    })
-    .then((data) => {
-        console.log(data); //respons --> object -> response -> data
-        return data.fact
-    })
-    .then((fact) => {
-        console.log(fact);
-    })
-    .catch((err) => {   
-        console.log("Error :", err );
-    });
-
-
-// secound exmple, one url two diffrent response
 // fetch(url)
-//     .then((res) => {
-//         return res.json()
+//     .then((respons) => { 
+//         console.log(respons); //come in body redablestrem not access all data 
+//         return respons.json() // access using this function use -> come to redable formet 
+//         //this was retuen promise // and in the promise response give data
 //     })
-//     .then((data1) => {
-//         console.log("data1 = ",data1.fact);
-//         return fetch(url);
+//     .then((data) => {
+//         console.log(data); //respons --> object -> response -> data
+//         return data.fact
 //     })
-//     .then((res) => {
-//         return res.json()
-//     })
-//     .then((data2) => {
-//         console.log("data2 = ",data2.fact);
+//     .then((fact) => {
+//         console.log(fact);
 //     })
 //     .catch((err) => {   
 //         console.log("Error :", err );
 //     });
-//     console.log('samarth'); // do not exicute first uper program because asynce consepte
 
-// //3 exmple
+// fetch(url)
+//     .then((res) => {
+//         return res.json();
+//     })    
+//     .then((data) => {
+//         console.log("data = ", data.fact);
+//         return fetch(url);
+//     })
+//     .then((res) => {
+//         return res.json() //data2 convert in jason
+//     })
+//     .then((data2) => {
+//         console.log("data2 = ", data2.fact);
+//     }) 
+//     .catch((err) => {   
+//         console.log("Error :", err );
+//     });
+//     console.log("kfkdjbsd");
+
+//3 exmple -> use async
+
 // async function getfacts(){
-//     let res = fetch(url);
-//     console.log(res); //ans is undefind because asynce consept do not white for the uper url check direct print
-//     //  res and not come data so print undefind thats why use --> awite -> 
-//     // because awite use first come data and then next call.
+//     try{
+//         let res = await fetch(url);
+//         console.log(res); //ans is undefind because asynce consept do not white for the uper url check direct print
+//         //  res and not come data so print undefind thats why use --> awite -> 
+//         // because awite use first come data and then next call.
+//         let data = await res.json();
+//         console.log(data.fact);
+//     }
+//     catch(error){ 
+//         console.log("error : " , error);
+//     }
+//     console.log("code exicut not stauk");
+   
 // }
 // getfacts();
 
