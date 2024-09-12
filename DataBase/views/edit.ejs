@@ -6,7 +6,7 @@
     <title>edit</title>
 </head>
 <body>
-    <h2>you are about edit the user: <%= user.emial %></h2>
+    <h2>you are about edit the user: <%= user.email %></h2>
     <form method="post" action="/users/<%= user.id %>?_method=PATCH">
         <textarea name="username"><%= user.username %></textarea>
         <br>

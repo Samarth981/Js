@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const methodOverride = require('method-override');
+const { v4: uuidv4 } = require("uuid");
 
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended : true})); //data pase as a redabal formate
@@ -96,6 +97,74 @@ let getRandomUser = ()=>{
             });
         } catch(err){
             res.send("some error found");
+        }
+    });
+
+    //add new
+    app.get("/user/new", (req, res) => {
+        res.render("new"); // This will render new.ejs when the "New" button is clicked
+    });    
+
+    //update databse
+    app.post("/user/new", (req, res) => {
+        console.log("Request body:", req.body); // Log the entire request body for debugging
+        let { username, email, password } = req.body;
+        let id = uuidv4();
+        let q = `INSERT INTO user(id, username, email, password) VALUES ('${id}', '${username}', '${email}', '${password}')`;
+
+        try {
+            connection.query(q, (err, result) => {
+                if (err) throw err;
+                console.log("Added new user");
+                res.redirect("/users");
+            });
+        } catch (err) {
+            res.send("An error occurred: " + err.message);
+        }
+    });    
+
+
+    //delete user
+    app.get("/user/:id/delete", (req,res) => {
+        let {id} = req.params;
+        let q = `SELECT * FROM user WHERE id = '${id}'`
+        try{
+            connection.query(q, (err, result) => {
+                if (err) throw err;
+                let user = result[0];
+                res.render("delete.ejs" , {user});
+            });
+        } catch (err) {
+            res.send("An error occurred: " + err.message);
+        }
+    })
+
+    app.delete("/user/:id" , (req,res) => {
+        let {id} = req.params;
+        let {password} = req.body;
+        let q = `SELECT * FROM user WHERE id = '${id}'`;
+        try{
+            connection.query(q, (err, result) => {
+                if (err) throw err;
+                let user = result[0];
+                
+                if(password != user.password){
+                    res.send("your password is incorrect");
+                }else{
+                    let q2 = `DELETE FROM user WHERE id='${id}'`; //Query to Delete
+                    connection.query(q2, (err, result) => {
+                    if (err) throw err;
+                    else {
+                        console.log(result);
+                        console.log("deleted!");
+                        res.redirect("/users");
+                    }
+                    });
+                } 
+            });
+        } 
+        catch (err) {
+            res.send("An error occurred: " + err.message);
         }
     });
 
