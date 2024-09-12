@@ -35,6 +35,18 @@ let getRandomUser = ()=>{
         }
     });
 
+    app.get("/users", (req,res) =>{
+        let q = `SELECT * FROM user ORDER BY username ASC`;
+        try{
+            connection.query(q,(err,result) => {
+                if(err) throw err;
+                res.render("showUsers.ejs", {result});
+            });
+        } catch(err){
+            res.render("some error found");
+        }
+    });
+
 
 app.listen("8080", () => {
     console.log("server is working well");
