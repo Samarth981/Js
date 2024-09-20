@@ -31,4 +31,4 @@ input.addEventListener("change",function(){
 let pass = document.querySelector("#pass"); 
 pass.addEventListener("input",function(){
     console.log("final pass =", this.value);
-})
+});
