@@ -109,7 +109,7 @@ removeDuplicates().catch((err) => {
 });
 
 //updat
-User.updateOne({name : "samarth"}, {age : 19})
+User.updateOne({name : "samarth"}, {age : 19}, {includeResultMetadata : true})
     .then((res) => 
         {
             console.log(res);
