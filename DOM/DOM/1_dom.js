@@ -5,6 +5,7 @@ console.dir(document); //main object
 let imag = document.getElementById('mainImg');
 let imag2 = document.querySelector('#mainImg');
 console.dir(imag);
+
 //change imag sorce
 imag.src = './creation_3.jpeg'; //change image sorce, so change image
 console.dir(document.getElementById('description'));
