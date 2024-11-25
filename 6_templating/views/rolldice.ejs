@@ -1,11 +1,12 @@
-<%- include("header/head.ejs") %> 
+<%- include("header/head.ejs") %>
 <body>
-    <h1>Dice gave value : 
-        <!-- use for ejs teg -->
-        <%= number %> <!-- using databege value direct -->
-    </h1>
-    <% if(number == 6) { %> 
-        <h2>Nice! Roll dice again</h2> 
-    <% } %>
+  <h1>
+    Dice gave value :
+    <!-- use for ejs teg -->
+    <%= number %>
+    <!-- using databege value direct -->
+  </h1>
+  <% if(number == 6) { %>
+  <h2>Nice! Roll dice again</h2>
+  <% } %>
 </body>
-</html> 
