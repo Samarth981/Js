@@ -21,24 +21,20 @@ btn.addEventListener('click', function () {
 
 //if btn click then exgisting list delete but new list not delet
 
-// let delbtns = document.querySelectorAll(".delete");
-// for(delet of delbtns){
-//     delet.addEventListener("click", function(){
-//         let del = this.parentElement;
-//         del.remove();
-//     });
+// let delbtns = document.querySelectorAll('.delete');
+// for (delet of delbtns) {
+//   delet.addEventListener('click', function () {
+//     let del = this.parentElement;
+//     del.remove();
+//   });
+// }
 
 //use Event Delegration concept
-// if same tiye eliment addEventListener is exist then new same type eliment create then not work
+// if same type eliment addEventListener is exist then new same type eliment create then not work
 //like exmple btn object addEventListener is alredy creat (line 5) after then append new btn in li and li append in ul so not add direct btn (because addEventListener alredy exist)
 //so, use for parent object  and call target eliment(btn) and remove li(this li is parent for btn)
+
 uls.addEventListener('click', function (event) {
-  // if (eliment.target.classList.contains("delete")) {
-  //     eliment.target.parentElement.remove();
-  // }
-
-  //or
-
   //nodename is give whiche eliment trigger like btn,input,etc
   if (event.target.nodeName == 'BUTTON') {
     let listItem = event.target.parentElement;
