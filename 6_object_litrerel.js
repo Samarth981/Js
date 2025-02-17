@@ -2,7 +2,7 @@
 
 const array = ['samarth', '20', '90%', ['maths', 'physics', 'chemestry']];
 // this is not clerify for what is this
-0;
+
 // object key is convert as a string
 const object_literel = {
   Name: 'samarth',

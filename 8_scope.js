@@ -81,6 +81,7 @@ function first() {
   function secound() {
     console.log(s); //lexical scop
   }
+  secound();
 }
 console.log(s);
 first();

@@ -26,7 +26,6 @@ sa(str);
 console.log(ans);
 
 //Q-3
-
 let country = ['Australia', 'Germeny', 'UnitedStatesofAmerica', 'UK'];
 function largestName(country) {
   let a = 0;

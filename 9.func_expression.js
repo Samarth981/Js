@@ -33,6 +33,7 @@ function oddEven(request) {
 }
 let request = 'even'; // passing value
 let storage = oddEven(request); // store a function for given request
+console.log(storage);
 
 //Methods -> object into function
 //ex-1

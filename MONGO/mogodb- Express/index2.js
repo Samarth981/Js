@@ -104,6 +104,7 @@ function asyncWrap(fn) {
     fn(req, res, next).catch((err) => next(err));
   };
 }
+
 //use asyncwrap function to handle err
 app.get(
   '/chats/:id',

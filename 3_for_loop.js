@@ -77,6 +77,7 @@ const results = [];
 for (let i = 100000; i >= 2; i = i - 2) {
   results.push(i);
 }
+console.log(results);
 
 // Q-2
 let fruits = ['mango', 'apple', 'banana', 'orange'];
