@@ -1,4 +1,4 @@
 module.exports = {
-    name : "mengo",
-    colore : "orange",
+  name: 'mengo',
+  colore: 'orange',
 };

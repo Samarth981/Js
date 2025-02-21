@@ -7,3 +7,5 @@ console.log(math.mul1(2, 3)); // 6
 console.log(math.g); // 9.8
 console.log(math.pi); // 3.13
 console.log(fruit.apple);
+
+console.log(process.argv);

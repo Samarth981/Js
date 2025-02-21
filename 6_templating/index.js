@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const instaData = require('./data.json');
 
 const port = 8080;
 
@@ -23,6 +24,7 @@ app.get('/rolldice', (req, res) => {
   let randomvalue = Math.floor(Math.random() * 6) + 1;
   res.render('rolldice.ejs', { number: randomvalue }); //object form
 });
+
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
@@ -30,7 +32,6 @@ app.listen(port, () => {
 //query
 //Like I am see in instagram search/q?="apple"//q is query
 app.get('/search', (req, res) => {
-  // console.log(req.query);
   //passing for req is store in query
   let { q } = req.query;
   res.send(`search results for query: ${q}`);
@@ -39,7 +40,6 @@ app.get('/search', (req, res) => {
 //intagram exmple
 app.get('/ig/:username', (req, res) => {
   let { username } = req.params;
-  const instaData = require('./data.json');
   const data = instaData[username];
   if (data) {
     res.render('insta.ejs', { data });

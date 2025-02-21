@@ -15,6 +15,7 @@ btn.addEventListener('click', async () => {
   let fact = await getFacts();
   p.innerText = fact;
 });
+
 let btn2 = document.querySelector('.img');
 let image = document.getElementById('ranImg');
 
@@ -35,14 +36,14 @@ async function getImg() {
   }
 }
 // //hedaer passing
-// const url2 = 'https://icanhazdadjoke.com/';
-// async function passHeader() {
-//   try {
-//     const hedaer = { hedaer: { Accept: 'application/json' } }; //come data as form json
-//     let res = await axios.get(url, hedaer);
-//     console.log(res.data);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-// passHeader();
+const url2 = 'https://icanhazdadjoke.com/';
+async function passHeader() {
+  try {
+    const hedaer = { hedaer: { Accept: 'application/json' } }; //come data as form json
+    let res = await axios.get(url, hedaer);
+    console.log(res.data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+passHeader();

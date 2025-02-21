@@ -1,13 +1,13 @@
-//new operator
 function Person(name, age) {
   //constructor
   this.name = name;
   this.age = age;
 }
-//function use in prototype
+
 Person.prototype.talk = function () {
-  console.log('this is a talk function create in prototype');
+  console.log('this is a talk function create in prototype'); //function use in prototype
 };
+
 //use new keyword , creat new object & pointing a prototype function
 let p1 = new Person('samarth', 20);
 let p2 = new Person('soham', 21);
@@ -16,6 +16,7 @@ console.log(p1, p2);
 console.log(p1.talk == p2.talk); // true because prototype is same
 
 //secound metohod to write
+//not need to create prototype autometic create
 //using class
 class Person2 {
   constructor(name, age) {
@@ -39,7 +40,7 @@ class Person3 {
     this.age = age;
   }
   talk() {
-    console.log('Hii this is secound method');
+    console.log('This is use for inheritance learn');
   }
 }
 
@@ -59,7 +60,7 @@ class Teacher extends Person3 {
   }
 }
 let s1 = new Student('samarth', 30, 90);
-let t1 = new Student('samarth', 30, 'english');
+let t1 = new Teacher('raj', 30, 'english');
 console.log(s1, t1);
 
 //exmple

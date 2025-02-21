@@ -76,7 +76,7 @@ function changeColor(color, delay) {
 // infinetChangeColor(); //function calling
 
 //using awite keyword
-// awite keyword only sue for async function
+// awite keyword only use for async function
 
 // async function infinetChangeColor(){
 //     await changeColor("red", 1000)

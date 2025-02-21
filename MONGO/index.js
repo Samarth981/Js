@@ -12,31 +12,43 @@ main()
     console.log(err);
   });
 
-//structure of data
+//Schema of user
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   age: Number,
 });
 
+//A Model User is like a class in object-oriented programming.
+// When you add methods to the schema (userSchema.methods.speak), they get attached to the prototype of the Model.
+userSchema.methods.speak = function speak() {
+  const greeting = this.name
+    ? 'Meow name is ' + this.name
+    : "I don't have a name";
+  console.log(greeting);
+};
+
 //creat model
 const User = mongoose.model('User', userSchema);
 
-//create data using this schema
+//create data using uper schema
 const user1 = new User({
   name: 'samarth',
   email: 'samarth123@gmail.com',
   age: 40,
 });
-//insert in db //save method return promisses
+
+//insert in db
 user1
-  .save()
+  .save() // return promisses
   .then((res) => {
     console.log(res);
+    user1.speak();
   })
   .catch((err) => {
     console.log(err);
   });
+console.log(User.prototype); //speak() metod check
 
 //insert multipal data
 User.insertMany([
@@ -58,13 +70,13 @@ User.insertMany([
   },
 ])
   .then((result) => {
-    console.log(result);
+    console.log('All data store');
   })
   .catch((error) => {
     console.log(error);
   });
 
-//find method use
+// //find method return Query not promise
 User.find({ age: { $gt: 20 } })
   .then((res) => {
     console.log('Query result:', res);
@@ -120,6 +132,7 @@ User.updateOne(
   { name: 'samarth' },
   { age: 19 },
   { includeResultMetadata: true },
+  { new: true }, //give update document
 )
   .then((res) => {
     console.log(res);
