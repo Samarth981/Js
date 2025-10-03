@@ -1,8 +1,8 @@
-//approch 3
+//approach 3
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 main()
-  .then(() => console.log('connection successfull'))
+  .then(() => console.log('connection successful'))
   .catch((err) => console.log(err));
 
 async function main() {
@@ -24,33 +24,37 @@ const postSchema = new Schema({
 const User = mongoose.model('User', userSchema);
 const Post = mongoose.model('Post', postSchema);
 
-// // const addData = async () => {
-// //   //   let user1 = new User({
-// //   //     name: 'Soham',
-// //   //     email: 'xyz123@gmail.com',
-// //   //   });
+// const addData = async () => {
+//   //   let user1 = new User({
+//   //     name: 'Soham',
+//   //     email: 'xyz123@gmail.com',
+//   //   });
 
-// //   let user = await User.findOne({ name: 'Soham' });
-// //   console.log(user);
+//   let user = await User.findOne({ name: 'Soham' });
 
-// //   let post1 = new Post({
-// //     content: 'hellow, this is test file',
-// //     like: 100,
-// //   });
+//   let post1 = new Post({
+//     content: 'hallow, this is test file',
+//     like: 100,
+//   });
 
-// //   let post2 = new Post({
-// //     content: 'byy',
-// //     like: 10,
-// //   });
+//   post1.user = user;
 
-// //   post2.user = user;
+  //   await user1.save();
+//   await post1.save();
 
-// //   //   await user1.save();
-// //   await post2.save();
+//   let post2 = new Post({
+//     content: 'byy',
+//     like: 10,
+//   });
+
+//   post2.user = user;
+
+  //   await user1.save();
+//   await post2.save();
 // };
 
-const gatdataInfo = async () => {
+const getdateInfo = async () => {
   let result = await Post.findOne({}).populate('user');
   console.log(result);
 };
-gatdataInfo();
+getdateInfo();

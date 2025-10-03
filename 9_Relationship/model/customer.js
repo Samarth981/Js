@@ -1,12 +1,13 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 main()
-  .then(() => console.log('connection successfull'))
+  .then(() => console.log("connection successful"))
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/relationship');
+  await mongoose.connect("mongodb://127.0.0.1:27017/relationship");
 }
+
 const orderSchema = new Schema({
   item: String,
   price: Number,
@@ -14,82 +15,76 @@ const orderSchema = new Schema({
 
 const customerSchema = new Schema({
   name: String,
-  order: [{ type: Schema.Types.ObjectId, ref: 'Order' }], //https://mongoosejs.com/docs/populate.html
+  order: [{ type: Schema.Types.ObjectId, ref: "Order" }], //https://mongoosejs.com/docs/populate.html
 });
 
-//after delete custome this middleware call
-customerSchema.post('findOneAndDelete', async (customer) => {
-  if (customer.order.length) {
-    let result2 = await Order.deleteMany({ _id: { $in: customer.order } }); // Correct usage of Order and _id
-    console.log(
-      `Customer deleted after connected order also deleted: ${result2}`,
-    );
+//after delete custom this middleware call
+customerSchema.post("findOneAndDelete", async (data) => {
+  if (data && data.order.length) {
+    let result2 = await Order.deleteMany({ _id: { $in: data.order } }); // Correct usage of Order and _id
+    console.log(result2);
   }
 });
 
-const Order = mongoose.model('Order', orderSchema);
-const Customer = mongoose.model('Customer', customerSchema);
+const Order = mongoose.model("Order", orderSchema);
+const Customer = mongoose.model("Customer", customerSchema);
 
-// const addOrder = async () => {
-//   let res = await Order.insertMany([
-//     {
-//       item: 'chips',
-//       price: 10,
-//     },
-//     {
-//       item: 'somasa',
-//       price: 15,
-//     },
-//     {
-//       item: 'chocolate',
-//       price: 5,
-//     },
-//   ]);
-//   console.log(res);
-// };
+const addOrder = async () => {
+  let res = await Order.insertMany([
+    {
+      item: "chips",
+      price: 10,
+    },
+    {
+      item: "somasa",
+      price: 15,
+    },
+    {
+      item: "chocolate",
+      price: 5,
+    },
+  ]);
+};
 // addOrder();
 
-// const addCustomer = async () => {
-//   let cust1 = new Customer({
-//     name: 'samarth',
-//   });
+const addCustomer = async () => {
+  let cust1 = new Customer({
+    name: "samarth",
+  });
 
-//   let order1 = await Order.findOne({ item: 'chips' });
-//   let order2 = await Order.findOne({ item: 'chocolate' });
+  let order1 = await Order.findOne({ item: "chips" });
+  let order2 = await Order.findOne({ item: "chocolate" });
 
-//   cust1.order.push(order1);
-//   cust1.order.push(order2);
+  cust1.order.push(order1);
+  cust1.order.push(order2);
 
-//   let result2 = await cust1.save();
-//   console.log(result2);
+  await cust1.save();
 
-//   let data = await Customer.find({});
-//   console.log(data);
+  await Customer.find({});
 
-//populate
-// let data = await Customer.find({}).populate('order');
-//   console.log(data[0]);
-// };
+  // populate
+  let data = await Customer.find({}).populate("order");
+  console.log(data);
+};
 // addCustomer();
 
-//function for deletion hendaling
-// const addCust = async () => {
-//   let newCust = new Customer({ name: 'karna Arjun' });
-//   let newOrder = new Order({ item: 'pizza', price: 100 });
+const addCust = async () => {
+  let newCust = new Customer({ name: "karna Arjun" });
+  let newOrder = new Order({ item: "pizza", price: 100 });
 
-//   newCust.order.push(newOrder);
+  newCust.order.push(newOrder);
 
-//   await newOrder.save();
-//   await newCust.save();
-//   console.log('add new cust');
-// };
+  await newOrder.save();
+  await newCust.save();
+  console.log("add new cust");
+};
 
 // addCust();
 
-//i am delete customer
+// delete customer call
 const deleteCust = async () => {
-  let result = await Customer.findOneAndDelete('67505004d7f9e90588d3b262');
+  let result = await Customer.findByIdAndDelete("68dfc815c850c86b008e8676");
   console.log(`Customer deleted: ${result}`);
 };
 
-deleteCust();
+// deleteCust();
