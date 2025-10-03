@@ -1,5 +1,5 @@
 import { generate } from "random-words";
-//in therer use this pakage import export so creat json file and type: module .
+//in there use this package import export so create json file and type: module .
 
 console.log(generate());
 //output: 'army'

@@ -1,5 +1,5 @@
-const math = require('./Math.js');
-const fruit = require('../fruits/index.js');
+const math = require("./Math.js");
+const fruit = require("../fruits/index.js");
 
 console.log(math);
 console.log(math.sum1(2, 3)); // 5

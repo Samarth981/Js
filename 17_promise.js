@@ -1,4 +1,4 @@
-let h1 = document.querySelector('h1');
+let h1 = document.querySelector("h1");
 
 // function changeColor(color, delay, nestcolore){
 //     setTimeout( () =>{
@@ -8,7 +8,7 @@ let h1 = document.querySelector('h1');
 //     },delay);
 // }
 
-// //callhell
+//function call hell
 // changeColor("red" ,1000, () =>{
 //     changeColor("green" ,1000 , () => {
 //         changeColor("orange" ,1000 , () => {
@@ -19,14 +19,14 @@ let h1 = document.querySelector('h1');
 //     });
 // });
 
-function changeColor(color, delay) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      h1.style.color = color;
-      resolve('color is change');
-    }, delay);
-  });
-}
+// function changeColor(color, delay) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       h1.style.color = color;
+//       resolve("color is change");
+//     }, delay);
+//   });
+// }
 
 // changeColor("red", 1000)
 //     .then(() => {
@@ -97,25 +97,25 @@ function changeColor(color, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       h1.style.color = color;
-      console.log('colore is ' + color);
-      resolve('color is change');
+      console.log("colore is " + color);
+      resolve("color is change");
     }, delay);
 
     //error come then
     let rendom = Math.floor(Math.random() * 5) + 1;
     if (rendom > 3) {
-      reject('promise is reject');
+      reject("promise is reject");
     }
   });
 }
 
 async function infinetChangeColor() {
   try {
-    await changeColor('red', 1000);
-    await changeColor('green', 1000);
-    await changeColor('blue', 1000);
-    await changeColor('yellow', 1000);
-    await changeColor('orange', 1000);
+    await changeColor("red", 1000);
+    await changeColor("green", 1000);
+    await changeColor("blue", 1000);
+    await changeColor("yellow", 1000);
+    await changeColor("orange", 1000);
   } catch (err) {
     console.log(err);
   }
